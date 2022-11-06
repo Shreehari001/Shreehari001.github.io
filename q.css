@@ -1,0 +1,235 @@
+@media (max-width: 75em) {
+  /* html {
+    font-size: 80%;
+  } */
+  .main-nav-list {
+    gap: 2.8rem;
+    font-size: 1rem;
+  }
+  .introduction {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin: 160px 0px 80px;
+  }
+  .body {
+    margin: 0 32px;
+  }
+  .col {
+    gap: 32px;
+  }
+  .row {
+    gap: 32px;
+  }
+  .header {
+    padding: 32px;
+  }
+}
+@media (max-width: 59em) {
+  html {
+    font-size: 88%;
+  }
+  .main-nav-list {
+    gap: 2.8rem;
+    font-size: 1rem;
+  }
+  .introduction {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin: 160px 0px 80px;
+  }
+  .body {
+    margin: 0 28px;
+  }
+  .col {
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+  .row {
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+  .row-2 {
+    margin-bottom: 40px;
+  }
+  .header {
+    padding: 28px;
+  }
+  .project-discription {
+    font-size: 16px;
+  }
+  .hero-img {
+    margin-bottom: 3rem;
+  }
+  .btn-mobile-nav {
+    display: block;
+  }
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.97);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .nav-open .icon-moble-nav[name="menu-outline"] {
+    display: none;
+  }
+  .nav-open .icon-moble-nav[name="close-outline"] {
+    display: block;
+  }
+}
+
+@media (max-width: 34em) {
+  html {
+    font-size: 80%;
+  }
+  .main-nav-list {
+    gap: 2.8rem;
+    font-size: 1rem;
+  }
+  .h1 {
+    font-size: 14px;
+  }
+  .hero-img {
+    margin-bottom: 24px;
+  }
+  .introduction {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    margin: 110px 0px 60px;
+    line-height: 30px;
+  }
+  .col--grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 58px;
+    margin-bottom: 58px;
+  }
+  .row--grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 58px;
+    margin-bottom: 58px;
+  }
+  .row-2--grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 58px;
+    margin-bottom: 58px;
+  }
+  .get {
+    display: flex;
+    justify-content: center;
+
+    font-size: 32px;
+  }
+  .btn:link,
+  .btn:visited {
+    padding: 24px 38px;
+    display: flex;
+    justify-content: center;
+  }
+  .Bottom-link {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    justify-items: center;
+    gap: 52px;
+    margin-bottom: 48px;
+  }
+  .hyper-link {
+    font-size: 20px;
+  }
+  .social-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .Title-names {
+    padding: 14px 14px;
+  }
+  .list-name {
+    column-gap: 100px;
+    /* font-size: 20px; */
+  }
+  .introduction {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .project-discription {
+    line-height: 24px;
+  }
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.97);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .nav-open .icon-moble-nav[name="menu-outline"] {
+    display: none;
+  }
+  .nav-open .icon-moble-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .icon-moble-nav {
+    width: 34px;
+    height: 34px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .header {
+    height: 5rem;
+  }
+  .project-discription {
+    font-size: 14px;
+  }
+}
