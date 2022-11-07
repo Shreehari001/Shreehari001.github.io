@@ -42,6 +42,9 @@
   display: flex;
   justify-content: space-between;
 }
+.box {
+  padding: 40px;
+}
 
 /* .main-header {
   background-color: rgb(234, 235, 242);
