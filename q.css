@@ -110,6 +110,10 @@
     gap: 2.8rem;
     font-size: 1rem;
   }
+  .body{
+    margin-left:34px;
+    margin-right:34px;
+  }
   .h1 {
     font-size: 14px;
   }
