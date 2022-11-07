@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .body {
-  margin: 40px;
+  margin: 34px;
   margin-top: 0px;
   position: relative;
   font-family: "Rubik", sans-serif;
@@ -43,7 +43,7 @@
   justify-content: space-between;
 }
 .box {
-  padding: 40px;
+  padding: 52px;
 }
 
 /* .main-header {
