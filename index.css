@@ -37,6 +37,11 @@
   height: 24px;
   width: 24px;
 }
+.empty {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+}
 
 /* .main-header {
   background-color: rgb(234, 235, 242);
