@@ -512,8 +512,8 @@ h3 {
     margin-top: 6rem; /* Adjusted */
   }
   .project-content {
-    flex-direction: column;
-    gap: 18rem;
+    flex-direction: row;
+    gap: 25rem;
     text-align: left; /* Ensure info and actions align left */
   }
   .project-actions {
