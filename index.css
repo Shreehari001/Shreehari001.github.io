@@ -1,169 +1,319 @@
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-.body {
-  margin: 40px;
-  margin-top: 0px;
-  position: relative;
-  font-family: "Rubik", sans-serif;
-  overflow-x: hidden;
-  position: relative;
+
+img {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.hero-img {
-  height: 100%;
-  width: 100%;
-  margin-bottom: 4rem;
-  border-radius: 0.2rem;
+html {
+  scroll-behavior: smooth; /* For basic #hash link jumps if JS fails, and for non-JS users */
 }
+
+body {
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+  color: #333; /* Default text color */
+  line-height: 1.6; /* Default line height */
+}
+
+.main-container {
+  position: relative; /* For absolute positioned children like hero images if needed */
+  text-align: center;
+  padding: 0 16rem; /* Original padding from .body div */
+  width: 100%;
+  /* max-width: 100%; */ /* width:100% on body and main-container usually enough */
+  /* overflow: hidden; */ /* Avoid if possible, can hide desired content */
+}
+
+.hero-img-background { /* Renamed from .hero-img */
+  position: absolute;
+  top: 0; /* Adjust as per design */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Or specific width like 1400px */
+  max-width: 1400px; /* Example from original CSS */
+  z-index: -1; /* Behind content */
+  pointer-events: none; /* So it doesn't interfere with clicks */
+  /* Removed background-* properties as it's an <img> tag */
+}
+
 .sticky {
   position: fixed;
   top: 0;
-  bottom: 0;
+  left: 0; /* Added for full width fixed positioning */
   width: 100%;
-  height: 8rem;
-  padding-top: 0;
-  padding-bottom: 0;
-  background-color: rgba(255, 255, 255, 0.97);
+  height: 8rem; /* As per original */
   z-index: 999;
-  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.01);
-}
-.html {
-  overflow-x: hidden;
-}
-.title-logo {
-  height: 24px;
-  width: 24px;
-}
-.empty {
-  display: block;
-  display: flex;
-  justify-content: space-between;
-}
-.box {
-  padding: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smoother transition */
+  /* Initial state: transparent */
+  background-color: transparent;
+  border-bottom: none;
+  box-shadow: none;
 }
 
-/* .main-header {
-  background-color: rgb(234, 235, 242);
-  padding: 20px 40px;
-  margin-bottom: 32px;
-} */
+.sticky.scrolled {
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  /* box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.03); Softer shadow */
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.97);
-
-  height: 6rem;
-  padding: 0 40px;
-  font-family: "Rubik", sans-serif;
+  height: inherit; /* Inherit height from .sticky */
+  padding: 1rem 16rem; /* Basic padding, can be adjusted by media queries. Original used 16rem page padding */
+  font-family: "Inter", sans-serif;
 }
+/* Adjust header padding to align with main-container if desired, or keep it edge-to-edge */
+.sticky .header {
+  padding: 0 16rem; /* To align with .main-container padding */
+}
+
+
+.header h1 a {
+  font-size: 1rem; /* Slightly larger for better clickability/visibility */
+  font-weight: 500;
+  color: #191919;
+  text-decoration: none;
+}
+
 .main-nav-list {
   list-style: none;
   display: flex;
   align-items: center;
   gap: 3.2rem;
 }
+
 .main-nav-link:link,
 .main-nav-link:visited {
   display: inline-block;
   text-decoration: none;
-  color: #333;
-  font-size: 1.4rem;
-  font-weight: 200;
-  transition: all 0.3s;
+  color: #656565;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.3s;
 }
+
 .main-nav-link:hover,
 .main-nav-link:active {
-  color: #1368fa;
+  color: #191919;
 }
-.container {
-  margin-left: auto;
-  margin-right: auto;
+
+.hero-introduction { /* New class for the intro section */
+  padding-top: 10rem; /* Account for fixed header height + some space */
 }
-/* nav {
-  padding-left: 40px;
-  padding-right: 40px;
+
+.empty { /* Container for introduction text */
+  display: block; /* Or flex if items inside need alignment */
+  /* justify-content: space-between; */ /* From original, depends on content */
 }
-.main-nav {
-  font-size: 16px;
+
+.box { /* This div was empty, style if used */
+  padding: 40px; /* Original style */
+  /* Consider removing if not used or giving specific purpose */
 }
-a:link {
-  color: rgb(211, 19, 138);
-  text-decoration: none;
-}
-a:hover {
-  color: black;
-  text-decoration: underline;
-}
-nav a:link {
-  margin-right: 32px;
-  margin-top: 10px;
-  display: inline-block;
-}
-nav a:link:last-child {
-  margin-right: 0;
-} */
+
 h1 {
-  float: left;
-}
-nav {
-  float: right;
-}
-/* .main-header nav a:link {
-  margin-top: 100px;
-} */
-h1 {
-  font-size: 2.2rem;
+  font-size: 1rem; /* Base size, can be overridden */
   font-weight: 500;
-  font-family: sans-serif;
-  padding: 0px 0px;
-  margin-bottom: 58 px;
-  cursor: pointer;
-  font-family: "Rubik", sans-serif;
+  color: #191919;
 }
-/* .first-img {
-  width: 600px;
-  height: 400px;
-} */
-/* .secound-img {
-  max-width: 600px;
-  height: 400px;
-}
-.third-img {
-  width: 600px;
-  height: 400px;
-}
-.forth-img {
-  max-width: 600px;
-  height: 400px;
-} */
+/* Specific h1 in header is styled above */
 
-.button {
-  font-size: 40px;
-  /* padding: 10px; */
-  cursor: pointer;
-  /* position: absolute; */
-
-  margin-top: 20px;
-  background-color: #1368fa;
-  color: #ffff;
+h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #191919;
 }
+
+.bottom-sticky-footer { /* Renamed from .bottom-sticky for clarity */
+  position: relative; /* This makes it stick to the bottom of the viewport */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem; /* Base padding */
+  background-color: rgba(255, 255, 255, 0.97); /* A light background */
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center; /* Aligns items horizontally */
+  align-items: center; /* Aligns items vertically */
+  gap: 2.5rem;
+  z-index: 998; /* Below sticky header if they overlap */
+}
+/* Align with main page content padding */
+.bottom-sticky-footer {
+  padding-left: 16rem;
+  padding-right: 16rem;
+}
+
+
+.footer-background-graphic { /* Renamed from .hero-img2 */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1400px; /* Example size */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Or contain, depending on design */
+  z-index: -1; /* Behind footer content */
+  pointer-events: none;
+}
+
+.get-in-touch-link { /* Was h3, now a link */
+  font-size: 1rem;
+  font-weight: 400;
+  color: #191919;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.get-in-touch-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #191919;
+  transition: width 0.3s ease;
+}
+
+.get-in-touch-link:hover {
+  color: #191919;
+}
+
+.get-in-touch-link:hover::after {
+  width: 100%;
+}
+
+.copy {
+  color: #636363; /* Original rgb(99, 99, 99) */
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers image link and project-content block */
+  gap: 2rem;
+}
+
+.project-item > a { /* The link wrapping the image */
+  display: block; /* Make it a block to contain the image properly */
+  width: 100%;
+  border-radius: 28px; /* Apply radius to the link for the image */
+  overflow: hidden; /* Ensures image respects border-radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-item > a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+
+.project-image {
+  display: block; /* Remove extra space below image */
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  /* height: 100%; object-fit: cover; */ /* This requires parent <a> to have a fixed height or aspect-ratio */
+  object-position: center center;
+  /* border-radius: 28px; */ /* Moved to parent <a> */
+}
+
+.project-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18rem; /* Reduced gap from 10rem */
+  padding: 0 1rem; /* Reduced padding from 80px */
+  width: 100%; /* Ensure it takes full width available in project-item */
+}
+
+.project-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Reduced gap */
+  text-align: left;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #191919;
+  margin: 0;
+}
+
+.project-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+.project-actions {
+  align-self: flex-start; /* Keeps it aligned with the start of the cross axis */
+  text-align: left; /* Changed from right for consistency, adjust if needed */
+}
+
+.parent-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem; /* Reduced from 144px */
+  padding: 4rem 0 8rem; /* Adjusted padding */
+  /* Removed fixed height and other flex properties not needed for simple column flow */
+}
+
+.case-study-link {
+  display: inline-block;
+  color: #191919; /* Original color */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  font-size: 1rem; /* Ensure consistent font size */
+  position: relative;
+}
+.case-study-link::after { /* Underline effect from .hyper-link */
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #191919; /* Match link color */
+  transition: width 0.3s ease;
+}
+.case-study-link:hover {
+  color: #191919; /* Darker shade on hover */
+}
+.case-study-link:hover::after {
+  width: 100%;
+}
+
 
 .btn-mobile-nav {
   border: none;
   background: none;
   cursor: pointer;
-
-  display: none;
+  display: none; /* Hidden by default, shown in media query */
+  z-index: 1000; /* Ensure it's above other nav elements */
 }
 
-.icon-moble-nav {
-  height: 48px;
-  width: 48px;
+.icon-moble-nav { /* Renamed from icon-moble-nav (typo) */
+  height: 2.5rem; /* 40px */
+  width: 2.5rem;  /* 40px */
   color: #333;
 }
 
@@ -171,274 +321,324 @@ h1 {
   display: none;
 }
 
-.btn:link,
-.btn:visited {
-  margin-top: 32px;
-  background-color: #1368fa;
-  color: #fff;
-  text-decoration: none;
-  text-transform: none;
-  font-weight: 500;
-  font-size: 20px;
-
-  display: inline-block;
-  border-radius: 8px;
-  transition: all 0.3s;
-}
-
-.btn:hover,
-.btn:active {
-  background-color: rgba(19, 104, 250, 0.62);
-}
-
-.btn--big {
-  /* font-size: 0px; */
-  padding: 32px 40px;
-}
-
-.clear {
-  clear: both;
-}
-.clearfix::after {
-  clear: both;
-  content: "";
-  display: block;
-}
+/* Introduction section styling */
 .introduction {
-  font-size: 1.6rem;
+  margin: 8rem 0 0; /* Adjusted margin, original 17rem */
+  font-size: 3.375rem;
   font-weight: 500;
-  font-family: sans-serif;
-  color: rgb(87, 85, 83);
-  margin: 164px 0px 100px;
-  line-height: 2.4rem;
-}
-.portfolio-group {
-}
-/* .p2 {
-  float: right;
-  margin-bottom: 20px;
-} */
-/* .row {
-  display: flex;
-  flex-direction: row;
-  margin-top: 56px;
-}
-.col {
-  display: flex;
-  flex-direction: row;
-} */
-/* .m1 {
-  margin-left: 150px;
-} */
-.email {
-  /* margin-top: 50px; */
-  margin-bottom: 64px;
-}
-.get {
-  font-size: 38px;
-}
-/* .r1 {
-  margin-top: 40px;
-} */
-.projectname {
-  margin-top: 24px;
-}
-.project-discription {
-  margin-top: 20px;
-  font-size: 18px;
-  line-height: 30px;
-  letter-spacing: 0.2px;
-  color: #7f7d7d;
+  /* font-family: sans-serif; */ /* Already inherits Inter */
+  color: #191919;
+  line-height: 1.1; /* Adjusted from 3.75rem for better scaling */
+  text-align: center;
 }
 
-.project-discription::before {
-  width: auto;
-}
-.project-discription::after {
-  word-break: break-all;
-}
-.read {
-  margin-top: 20px;
-}
-.col {
-  max-width: 130rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 48px;
-  gap: 40px;
+.rupeek-gradient {
+  background: linear-gradient(90deg, #e84a0f 0%, #e52b12 24%, #b31477 63%, #235eaa 98%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback for browsers not supporting background-clip: text */
+  transition: opacity 0.2s;
 }
 
-.last {
-  margin-bottom: 48px;
-}
-.first-img {
-  width: 100%;
-  transition: all 0.4s;
-  overflow: hidden;
-  border-radius: 10px;
+.rupeek-link {
+  text-decoration: none;
+  display: inline-flex; /* Allows vertical alignment of icon */
+  align-items: center;
+  position: relative; /* For icon positioning */
 }
 
-.first-img:hover {
-  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.03);
-  transform: translatey(-0.5rem);
+.rupeek-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transform: translateX(-10px) translateY(-50%); /* Initial position */
+  position: absolute;
+  right: -2rem; /* Position to the right of "Rupeek" */
+  top: 50%;
+  visibility: hidden; /* Hide until hover */
 }
 
-.secound-img:hover {
-  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.03);
-  transform: translatey(-0.5rem);
+.rupeek-link:hover .rupeek-icon {
+  opacity: 1;
+  transform: translateX(0) translateY(-50%);
+  visibility: visible;
 }
-.third-img:hover {
-  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.03);
-  transform: translatey(-0.5rem);
+
+.sub-text {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #3d3c3c; /* Original rgb(61, 60, 60) */
+  margin: 1.5rem auto 6rem; /* Reduced bottom margin, added auto for horizontal centering if needed */
+  line-height: 1.75rem;
+  text-align: center;
+  letter-spacing: 0.02rem;
+  max-width: 60ch; /* Improve readability */
 }
-.forth-img:hover {
-  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.03);
-  transform: translatey(-0.5rem);
+
+.pill-text {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #191919;
+  margin: 10rem auto 5rem; /* auto for horizontal centering */
+  line-height: 1.375rem;
+  text-align: center;
+  letter-spacing: 0.04rem;
+  border: 1px solid #c5c4c4; /* Original rgb(197, 196, 196) */
+  border-radius: 999px;
+  display: inline-block;
+  padding: 8px 16px;
+  background: #fff;
 }
-.fith-img:hover {
-  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.03);
-  transform: translatey(-0.5rem);
+.pill-text a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
 }
-.secound-img {
-  width: 100%;
-  transition: all 0.4s;
-  border-radius: 10px;
+
+.Scroll-down-icon { /* Renamed from .Scroll-down */
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+  margin-left: 0.25rem; /* Original 0.1rem */
+  margin-bottom: 0.1rem; /* Original 0.2rem */
+  animation: bounce 1.4s infinite ease-in-out;
 }
-.fith-img {
-  width: 100%;
-  transition: all 0.4s;
-  border-radius: 10px;
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); } /* Slightly more bounce */
 }
-.row {
-  max-width: 130rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 48px;
-  gap: 40px;
+
+/* Footer Styling */
+.page-footer {
+  margin-top: 8rem; /* Original 12rem */
+  margin-bottom: 12rem; /* Space for sticky footer bar, original 8rem */
+  padding: 0 16rem; /* To align with main content */
 }
-.row-2 {
-  max-width: 130rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 72px;
-  gap: 40px;
-}
-.third-img {
-  width: 100%;
-  transition: all 0.4s;
-  border-radius: 10px;
-}
-.forth-img {
-  width: 100%;
-  transition: all 0.4s;
-  border-radius: 10px;
-}
-.fith-img {
-  width: 100%;
-  transition: all 0.4s;
-}
-.Bottom-link {
-  margin-top: 4rem;
-  margin-bottom: 8rem;
+.footer-content-wrapper.Bottom-link { /* Original class was Bottom-link */
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+
 .social-links {
   list-style: none;
   display: flex;
   gap: 2.4rem;
+  padding-left: 0; /* Remove default ul padding */
 }
-.social-icon {
-  height: 2.4rem;
-  width: 2.4rem;
+
+.Social-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: block; /* Ensure consistent rendering */
 }
+
 .footer-link:link,
 .footer-link:visited {
   text-decoration: none;
-  font-size: 1.6rem;
   color: #767676;
-  transition: all 0.3s;
+  transition: color 0.3s;
+  display: flex; /* For icon alignment if text was next to it */
+  align-items: center;
 }
 
 .footer-link:hover,
 .footer-link:active {
   color: #555;
 }
+
 .resume-link {
-  display: flex;
+  display: flex; /* To align icon and text */
   align-items: center;
+  gap: 0.5rem; /* Space between icon and text, original 1rem */
 }
-.hyper-link {
-  margin-left: 0.8rem;
-  font-size: 1.2rem;
-  text-decoration: none;
-  cursor: pointer;
-
-  color: #222;
-}
-.hyper-link:link,
-.hyper-link:visited {
-  color: rgba(0, 0, 0, 0.817);
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 0.6px;
-  transition: all 0.3s;
-}
-.hyper-link:hover,
-.hyper-link:active {
-  color: blue;
-  border-bottom: 1px solid transparent;
+.resume-link .file-link { /* The <a> tag itself */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
 }
 
-.case-study {
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: #444;
-  border-bottom: 1px solid transparent;
-  cursor: pointer;
+.resume-link .hyper-link-text { /* span for the text */
+  color: #191919;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative; /* For underline pseudo-element */
+  transition: color 0.3s ease;
+}
+.resume-link .hyper-link-text::after { /* Underline effect */
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #191919;
+  transition: width 0.3s ease;
+}
+.resume-link a:hover .hyper-link-text {
+  color: #191919; /* Maintain color or change slightly */
+}
+.resume-link a:hover .hyper-link-text::after {
+  width: 100%;
 }
 
-.case-study:link,
-.case-study:visited {
-  color: #444;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 0.6px;
-  transition: all 0.3s;
-}
-.case-study:hover,
-.case-study:active {
-  color: #888;
-  border-bottom: 1px solid transparent;
-}
-
-.Title-names {
-  background-color: #222;
-  padding: 18px 18px;
-}
-
-.list-name {
-  color: #fff;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  column-gap: 200px;
-  /* font-size: 20px; */
-}
-.marquee {
+/* Visually hidden class for accessibility text */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
   overflow: hidden;
-}
-.names {
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: "Rubik", sans-serif;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
-.star-icon {
-  color: #1368fa;
-  width: 1.5rem;
-  height: 1.5rem;
+/* Media query adjustments for new structure */
+/* Ensure q.css selectors are still valid or update them there. */
+/* Example: .body padding becoming .main-container padding */
+@media (max-width: 75em) { /* Corresponds to original q.css */
+  .main-container, .sticky .header, .page-footer, .bottom-sticky-footer {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .introduction {
+    font-size: 2.8rem; /* Adjusted from 1.4rem (original was complex) */
+    margin-top: 6rem; /* Adjusted */
+  }
+  .project-content {
+    flex-direction: column;
+    gap: 18rem;
+    text-align: left; /* Ensure info and actions align left */
+  }
+  .project-actions {
+    align-self: flex-start; /* Align button to left */
+  }
+}
+
+@media (max-width: 59em) {
+   html {
+    font-size: 88%; /* Kept from q.css */
+  }
+  .main-container, .sticky .header, .page-footer, .bottom-sticky-footer {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  .introduction {
+    font-size: 2.5rem; /* Adjusted */
+    margin-top: 5rem;
+  }
+   .btn-mobile-nav {
+    display: block;
+  }
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.97);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in, opacity 0.5s ease-in; /* Corrected transition */
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 2.5rem; /* Adjusted from 3rem */
+  }
+  .header.nav-open .main-nav { /* Applied to header */
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .header.nav-open .icon-moble-nav[name="menu-outline"] {
+    display: none;
+  }
+  .header.nav-open .icon-moble-nav[name="close-outline"] {
+    display: block;
+  }
+}
+
+@media (max-width: 34em) {
+  html {
+    font-size: 80%; /* Kept from q.css */
+  }
+  .main-container, .sticky .header, .page-footer, .bottom-sticky-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .introduction {
+    font-size: 2rem; /* Adjusted */
+    line-height: 1.3;
+    margin-top: 4rem; /* Adjusted */
+  }
+  .sub-text {
+    font-size: 1rem;
+    margin-bottom: 4rem;
+  }
+  .parent-container {
+    gap: 4rem;
+  }
+  .project-title {
+    font-size: 1.3rem;
+  }
+  .project-description {
+    font-size: 0.9rem;
+  }
+   .footer-content-wrapper.Bottom-link {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .page-footer {
+    margin-bottom: 10rem;
+    margin-top: 4rem; /* More space for taller sticky footer */
+  }
+  .bottom-sticky-footer {
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .icon-moble-nav {
+    width: 34px; /* From q.css */
+    height: 34px; /* From q.css */
+  }
+  .header h1 a {
+    font-size: 1rem; /* Adjusted from 24px */
+  }
+   
+  .header {
+    padding: 10px 16px;
+  }
+  .pill-text {
+    margin: 4rem auto 5rem;
+  }
+  .project-image {
+    border-radius: 16px;
+  }
+  .project-item > a {
+    border-radius: 16px;
+  }
+  .project-content {
+    gap: 1rem;
+  }
+  .footer-content-wrapper.Bottom-link {
+    gap: 4rem;
+  }
 }

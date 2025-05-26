@@ -6,162 +6,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
     <link href="index.css" rel="stylesheet" />
-    <link href="q.css" rel="stylesheet" />
-    <title> Shreehari.k</title>
-    <link rel = "icon" href="/Img/Frame 230.png" alt="image" type = "image/x-icon">
+    <title>Shreehari K</title>
+    <link rel="icon" type="image/png" href="img/Logo1.png">
+    <link rel="apple-touch-icon" href="img/Logo1.png">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-     <script defer src="java.js"></script>
+    <script defer src="java.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const header = document.querySelector('.header.sticky'); // More specific selector
+        if (header) { // Check if header exists
+          window.addEventListener('scroll', function() {
+            if (window.scrollY > 90) {
+              header.classList.add('scrolled');
+            } else {
+              header.classList.remove('scrolled');
+            }
+          });
+        }
+      });
+    </script>
   </head>
   <body>
-        <header class="header sticky">
-          <h1>Shreehari k</h1>
-          <nav class="main-nav">
-            <ul class="main-nav-list">
-              <li><a class="main-nav-link" href="#work">Work1</a></li>
-              <li><a class="main-nav-link" href="#contact">Contact</a></li>
-              <li><a class="main-nav-link" href="#Resume">Resume</a></li>
-            </ul>
-          </nav>
-       
-          <button class="btn-mobile-nav">
-            <ion-icon class="icon-moble-nav" name="menu-outline"></ion-icon>
-            <ion-icon class="icon-moble-nav" name="close-outline"></ion-icon>
-          </button>
-          
-        </header>
-        <!-- <div class="clear"></div> -->
-      </header>
-   <div class="body">
-   <div class="empty"> 
-      <p class="introduction">
-        Hello I'm a UX/UI designer and developer strongly focused <br> on creating beautiful,
-        functional UI's.
-      </p>
-       <div class="box"></div>       
-     </div> 
-     
-      <div class="hero-img">
-        <img src="/Img/hero-img.png" alt="image" class="hero-img"/>
-        <section class="section-work"  id="work"></section>
-      </div>
-      
-      
-      <div class="col col--grid">
-        <div class="img-col">
-          <a href="https://www.behance.net/gallery/147845969/Finzo-Stock-Analysis-Dashboard" target="_blank"><img src="/Img/finzoimg.png" alt="Finzo" class="first-img" /></a>
-          <h2 class="projectname">Finzo</h2>
-          <p class="project-discription">
-            Finzo stock analysis platform provides a simple User interface helping investor to carry out stock analysis.
-
-          </p>
-          <div class="read">
-            <a href="https://www.behance.net/gallery/147845969/Finzo-Stock-Analysis-Dashboard" target="_black" class="case-study">Read case study</a>
-          </div>
-        </div>
-        <div class="m1">
-          <a href="https://www.behance.net/gallery/153940675/Super-App-Branding" target="_blank"><img src="/Img/ai1.png" alt="Ai1 APP" class="secound-img" /></a>
-          <h2 class="projectname">Ai1 Banking App</h2>
-          <p class="project-discription">
-            Rebranding canara ai1” mobile banking super App 250 features integrated with vision of “One Bank, One App".
-          </p>
-          <div class="read">
-            <a href="https://www.behance.net/gallery/153940675/Super-App-Branding" target="_black" class="case-study">Read case study</a>
-          </div>
-        </div>
-      </div>
-      <div class="row row--grid">
-        <div>
-         <a href="https://dribbble.com/shots/18035641-Track-your-expenditure" target="_blank"> <img src="/Img/count.png" alt="count APP" class="third-img" /></a>
-          <h2 class="projectname">Count App</h2>
-          <p class="project-discription">
-            Count is a tool used to plan your budget and track spending,so you stay in control and achieve your goals.
-          </p>
-          <div class="read">
-            <a href="https://dribbble.com/shots/18035641-Track-your-expenditure" target="_black" class="case-study">Read case study</a>
-          </div>
-        </div>
-        <div class="m1">
-          <a href="https://dribbble.com/shots/18165923-Dito-smart-way-to-deposit-money" target="_blank"><img src="/Img/Dito.png" alt="Dito APP" class="forth-img" /></a>
-          <h2 class="projectname">Dito</h2>
-          <p class="project-discription">
-            An app for Retail individual who can easly manage their cash    with super app Dito and track their deposits.
-          </p>
-          <div class="read">
-            <a href="https://dribbble.com/shots/18165923-Dito-smart-way-to-deposit-money" target="_black" class="case-study">Read case study</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="row-2 row-2--grid">
-        <div class="m1 m1--grid">
-          <a  href="https://www.behance.net/gallery/154731965/Redesign-Ather-App" target="_blank">
-            <img src="/Img/Ather.png" alt="Dito APP" class="fith-img" /></a>
-          <h2 class="projectname" >Ather landing page</h2>
-          <p class="project-discription">
-            This redesign concept was made to practise my skills and is a personal side project.
-          </p>
-          <div class="read">
-            <a href="https://www.behance.net/gallery/154731965/Redesign-Ather-App" target="black" class="case-study">Read case study</a>
-          </div>
-        </div>
-        
-        <div class="last">
-          <a href="https://www.behance.net/gallery/151239269/Investing-in-PMS" target="_blank">
-            <img src="/Img/PMS.png" alt="Dito APP" class="fith-img" /></a>
-          <h2 class="projectname">Portfolio management</h2>
-          <p class="project-discription">
-            Designing landing page for PMS service offered by the  Portfolio Manager,
-            investing in stocks and more.
-          </p>
-          
-          <div class="read">
-            <a href="https://www.behance.net/gallery/151239269/Investing-in-PMS" target="black" class="case-study">Read case study</a>
-          </div>
-        </div> 
-      </div>
-      </section>
-      <section class="section-contact" id="contact">
-      <div class="email">
-        <h3 class="get">Get in touch</h3>
-        <a class="btn btn--big" href="mailto:Kshreehari8@gmail.com">Kshreehari8@gmail.com</a>
-      </div>
-    </section>
-  
-  <section class="section-work"  id="Resume"></section>
-      <footer class="Bottom-link">
-        <!-- <img src="PDF icon.png" alt="PDF" class="PDF-img" /> -->
-        <div class="resume-link">
-          <a class="footer-link"href="https://drive.google.com/file/d/15gsgRcGv3GhTshIatrtUH2swDOQi255X/view?usp=share_link"><ion-icon class="social-icon"name="document-outline"></ion-icon></a>
-          <a href="https://drive.google.com/file/d/15gsgRcGv3GhTshIatrtUH2swDOQi255X/view?usp=share_link" class="hyper-link" target="black">Resume-Shreehari.PDF</a>
-      </div>
-        <ul class="social-links">
-          <li>
-            <a href="https://www.behance.net/shreeharik" target="_blank" class="footer-link">
-              <ion-icon class="social-icon"name="logo-behance"></ion-icon>
-            </a>
-          </li>
-          <li><a  href="https://dribbble.com/shreehari-k" class="footer-link" target="_blank" ><ion-icon class="social-icon"name="logo-dribbble"></ion-icon></a></li>
-          <li><a href="https://www.linkedin.com/in/shreehari-k-a11766229/"  class="footer-link" target="_blank"><ion-icon class="social-icon"name="logo-linkedin"></ion-icon></a></li>
-        </ul>
-      </footer>
     
+    <header class="header sticky">
+      <h1><a href="#" aria-label="Shreehari K - Home">Shreehari</a></h1>
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a class="main-nav-link" href="#work">Work</a></li>
+          <li><a class="main-nav-link" href="#contact">Contact</a></li>
+          <li><a class="main-nav-link" href="https://drive.google.com/file/d/1WYr4qn_87Xj5S7SCiCUGlOIPCV8iZ48o/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        </ul>
+      </nav>
+   
+      <button class="btn-mobile-nav" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav-list">
+        <ion-icon class="icon-moble-nav" name="menu-outline" aria-hidden="true"></ion-icon>
+        <ion-icon class="icon-moble-nav" name="close-outline" aria-hidden="true"></ion-icon>
+      </button>
+    </header>
+
+    <img src="Img/G-image.svg" alt="Abstract background graphic" class="hero-img-background"/>
+    
+    <main class="main-container">
+      <section class="hero-introduction" aria-labelledby="intro-heading">
+        <!-- The div.empty was kept for minimal CSS changes, but could be this section itself -->
+        <div class="empty"> 
+          <p class="introduction" id="intro-heading">
+            Hello, I'm Shreehari,<br>Product Designer at
+            <a href="https://www.rupeek.com" class="rupeek-link" target="_blank" rel="noopener noreferrer">
+              <span class="rupeek-gradient">Rupeek</span>
+              <img src="img/Arrow icon.svg" alt="Arrow icon" class="rupeek-icon" />
+            </a>
+          </p>
+          <p class="sub-text">curious designer, always seeking new challenges <br> to deliver innovative and impactful design solutions. </p>
+          <p class="pill-text">
+            <a href="#work" class="scroll-down-link">
+              SCROLL DOWN <img src="img/CaretDoubleDown.svg" alt="Scroll down icon" class="Scroll-down-icon" />
+            </a>
+          </p>
+          <div class="box"></div> <!-- Assuming this box might be used for spacing or future content -->
+        </div>
+      </section>
+      
+      <section class="projects-section" id="work" aria-labelledby="projects-heading">
+        <!-- <h2 id="projects-heading" class="visually-hidden">My Work</h2> --> <!-- Optional: for screen readers if no visible heading -->
+        <div class="parent-container">
+          <div class="project-item">
+            <a href="https://www.figma.com/proto/q3D4L90Q3PssVGCkguEnH3/Case-study-DataAnalyser?page-id=1628%3A1443&node-id=1940-7978&viewport=-2785%2C1198%2C0.1&t=Nd3mvNAVi3QhI5yw-8&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1940%3A7978&hide-ui=1" target="_blank" rel="noopener noreferrer">
+              <img src="img/DataA1.png" alt="DataAnalyser project preview" class="project-image" />
+            </a>
+            <div class="project-content">
+              <div class="project-info">
+                <h2 class="project-title">DataAnalyser</h2>
+                <p class="project-description">
+                  UI/UX case study transforming how VC funds manage complex financial data with a simple user-friendly interface.
+                </p>
+              </div>
+              <div class="project-actions">
+                <a href="https://www.figma.com/proto/q3D4L90Q3PssVGCkguEnH3/Case-study-DataAnalyser?page-id=1628%3A1443&node-id=1940-7978&viewport=-2785%2C1198%2C0.1&t=Nd3mvNAVi3QhI5yw-8&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1940%3A7978&hide-ui=1" target="_blank" rel="noopener noreferrer" class="case-study-link">View case study</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <a href="https://www.behance.net/gallery/147845969/Finzo-Stock-Analysis-Dashboard" target="_blank" rel="noopener noreferrer"> <!-- Link was to Behance, but case study link to Figma. Assuming Behance is the main project link. -->
+              <img src="Img/Agrooimg.png" alt="Agroo project preview" class="project-image" />
+            </a>
+            <div class="project-content">
+              <div class="project-info">
+                <h2 class="project-title">Agroo</h2>
+                <p class="project-description">
+                  Agroo is a mobile app that helps farmers store crops, access loans, and sell locally for higher profits.
+                </p>
+              </div>
+              <div class="project-actions">
+                <a href="https://www.figma.com/proto/FWhQwldvs18r8ApE8mo9IG/Case-study--Agroo-?page-id=&node-id=15-462&viewport=-3553%2C-3577%2C0.04&t=UTnvV9rwTh44Ut94-8&scaling=min-zoom&content-scaling=fixed&hide-ui=1" target="_blank" rel="noopener noreferrer" class="case-study-link">View case study</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <a href="https://www.behance.net/gallery/147845969/Finzo-Stock-Analysis-Dashboard" target="_blank" rel="noopener noreferrer">
+              <img src="img/Finzoimg 2.png" alt="Finzo Stock Analysis Dashboard project preview" class="project-image" />
+            </a>
+            <div class="project-content">
+              <div class="project-info">
+                <h2 class="project-title">Stock Analysis Dashboard</h2>
+                <p class="project-description">
+                  Finzo stock analysis platform where people can track company's financials easily.  
+                </p>
+              </div>
+              <div class="project-actions">
+                <a href="https://www.behance.net/gallery/147845969/Finzo-Stock-Analysis-Dashboard" target="_blank" rel="noopener noreferrer" class="case-study-link">View case study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="page-footer" id="contact" aria-labelledby="footer-heading">
+      <!-- <h2 id="footer-heading" class="visually-hidden">Contact and Social Links</h2> --> <!-- Optional -->
+      <div class="footer-content-wrapper Bottom-link"> <!-- Kept Bottom-link for original styling, wrapped for padding -->
+        <div class="resume-link">
+          <a class="file-link" href="https://drive.google.com/file/d/1WYr4qn_87Xj5S7SCiCUGlOIPCV8iZ48o/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <img src="Img/FileText.svg" alt="File icon" class="Social-icon"/>
+            <span class="hyper-link-text">Resume-2025</span> <!-- Text moved into a span for clarity -->
+          </a>
+        </div>
+        <ul class="social-links">
+          <li><a href="https://dribbble.com/shreehari-k" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="Dribbble"><img src="Img/DribbbleLogo.svg" alt="Dribbble logo" class="Social-icon"/></a></li>
+          <li><a href="https://www.linkedin.com/in/shreehari-k-a11766229/" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="Img/LinkedinLogo.svg" alt="LinkedIn logo" class="social-icon"/></a></li>
+          <li><a href="https://www.behance.net/shreeharik" target="_blank" class="footer-link" rel="noopener noreferrer" aria-label="Behance"><img src="Img/BehanceLogo.svg" alt="Behance logo" class="Social-icon"/></a></li>
+        </ul>
       </div>
-    </div>  
+    </footer>
+  
+    <div class="bottom-sticky-footer">
+      <p class="copy">© 2025</p>
+      <a href="mailto:Kshreehari8@gmail.com" class="get-in-touch-link">Get in touch</a>
+      <img src="Img/Frame1.svg" alt="Abstract footer background graphic" class="footer-background-graphic"/>
     </div>
 
-    <div class="Title-names">
-
-      <marquee scrollamount=13s> 
-      <ul class="list-name">
-        <li class="names"><ion-icon name="medical" class="star-icon"></ion-icon>UX UI</li>
-        <li class="names"><ion-icon name="medical" class="star-icon"></ion-icon>Product designer</li>
-        <li class="names"><ion-icon name="medical" class="star-icon"></ion-icon>Branding</li>
-        <li class="names"><ion-icon name="medical" class="star-icon"></ion-icon>Developer</li>
-        <li class="names"><ion-icon name="medical" class="star-icon"></ion-icon>Investor</li>     
-      </ul>
-    </marquee>
   </body>
 </html>
