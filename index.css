@@ -133,6 +133,38 @@ body {
   color: #e84a0f;
 }
 
+@keyframes flip-letter {
+  0% {
+    transform: perspective(1000px) rotateX(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: perspective(1000px) rotateX(180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.main-nav-link span {
+  display: inline-block;
+  transform-origin: center;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transform-style: preserve-3d;
+}
+
+.main-nav-link:hover span {
+  animation: flip-letter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.main-nav-link:hover {
+  color: #e84a0f;
+}
+
 .main-nav-link:hover,
 .main-nav-link:active {
   color: #191919;
