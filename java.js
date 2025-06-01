@@ -47,6 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500); // Delay before starting fade-in
   });
 
+  // Add introduction animation
+  const introduction = document.querySelector('.introduction');
+  if (introduction) {
+    // Just ensure the element exists, the animation is handled by CSS
+    introduction.style.opacity = '1';
+  }
+
   const floatElements = document.querySelectorAll('.float');
   floatElements.forEach(element => {
     // Ensure the @keyframes float is defined in CSS

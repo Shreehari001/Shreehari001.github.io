@@ -101,6 +101,38 @@ body {
   transition: color 0.3s;
 }
 
+@keyframes flip-letter {
+  0% {
+    transform: perspective(1000px) rotateX(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: perspective(1000px) rotateX(180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.main-nav-link span {
+  display: inline-block;
+  transform-origin: center;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transform-style: preserve-3d;
+}
+
+.main-nav-link:hover span {
+  animation: flip-letter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.main-nav-link:hover {
+  color: #e84a0f;
+}
+
 .main-nav-link:hover,
 .main-nav-link:active {
   color: #191919;
@@ -322,6 +354,19 @@ h3 {
 }
 
 /* Introduction section styling */
+@keyframes intro-blur {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(2.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
 .introduction {
   margin: 8rem 0 0; /* Adjusted margin, original 17rem */
   font-size: 3.375rem;
@@ -330,6 +375,63 @@ h3 {
   color: #191919;
   line-height: 1.1; /* Adjusted from 3.75rem for better scaling */
   text-align: center;
+  text-wrap: balance;
+}
+
+.introduction span {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(1px);
+  animation: intro-blur 0.6s ease-out forwards;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  --base-delay: 0.3s;
+  animation-delay: calc(var(--base-delay) + (var(--i) * 0.1s));
+}
+
+.introduction span:nth-child(1) { --i: 0; }
+.introduction span:nth-child(2) { --i: 1; }
+.introduction span:nth-child(3) { --i: 2; }
+
+.rupeek-link {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(1px);
+  animation: intro-blur 0.6s ease-out forwards;
+  --base-delay: 0.1s;
+  --i: 1;
+  animation-delay: calc(var(--base-delay) + (var(--i) * 0.1s));
+}
+
+.rupeek-link .rupeek-gradient {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(1px);
+  animation: intro-blur 0.5s ease-out forwards;
+  --base-delay: 0.1s;
+  --i: 1;
+  animation-delay: calc(var(--base-delay) + (var(--i) * 0.1s));
+}
+
+.rupeek-link {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(1px);
+  animation: intro-blur 0.5s ease-out forwards;
+  --base-delay: 0.1s;
+  --i: 4;
+  animation-delay: calc(var(--base-delay) + (var(--i) * 0.1s));
+  
 }
 
 .rupeek-gradient {
@@ -348,21 +450,54 @@ h3 {
   position: relative; /* For icon positioning */
 }
 
+.rupeek-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .rupeek-icon {
   width: 1.6rem;
   height: 1.6rem;
   opacity: 0;
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-  transform: translateX(-10px) translateY(-50%); /* Initial position */
-  position: absolute;
-  right: -2rem; /* Position to the right of "Rupeek" */
-  top: 50%;
-  visibility: hidden; /* Hide until hover */
+  transform: translateY(20px);
+  animation: intro-blur 0.5s ease-out forwards;
+  --base-delay: 0.3s;
+  --i: 4;
+  animation-delay: calc(var(--base-delay) + (var(--i) * 0.1s));
+  visibility: hidden;
+}
+
+@keyframes arrow-hover {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  20% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  40% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateX(-5px);
+  }
+  80% {
+    opacity: 0.9;
+    transform: translateX(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .rupeek-link:hover .rupeek-icon {
-  opacity: 1;
-  transform: translateX(0) translateY(-50%);
+  animation: arrow-hover 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   visibility: visible;
 }
 
@@ -375,6 +510,15 @@ h3 {
   text-align: center;
   letter-spacing: 0.02rem;
   max-width: 60ch; /* Improve readability */
+  /* font-variation-settings: "opsz" 32; */
+  text-wrap: balance;
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(1px);
+  animation: intro-blur 0.5s ease-out forwards;
+  --base-delay: 0.2s;
+  --i: 3;
+  animation-delay: calc(var(--base-delay) + (var(--i) * 0.1s));
 }
 
 .pill-text {
