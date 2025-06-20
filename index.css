@@ -13,12 +13,23 @@ html {
   scroll-behavior: smooth; /* For basic #hash link jumps if JS fails, and for non-JS users */
 }
 
+@font-face {
+  font-family: 'Regola Book';
+  src: url('Fonts/regola-book\ \(1\).ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   min-height: 100vh;
-  font-family: "Inter", sans-serif;
+  font-family: 'Regola Book', sans-serif;
   overflow-x: hidden; /* Prevent horizontal scrollbars */
   color: #333; /* Default text color */
   line-height: 1.6; /* Default line height */
+}
+
+.sub-text {
+  font-family: 'Regola Book', sans-serif;
 }
 
 .main-container {
@@ -158,6 +169,7 @@ h1 {
   font-size: 1rem; /* Base size, can be overridden */
   font-weight: 500;
   color: #191919;
+  
 }
 /* Specific h1 in header is styled above */
 
@@ -288,6 +300,7 @@ h3 {
   font-weight: 600;
   color: #191919;
   margin: 0;
+  letter-spacing: 0.01px !important;
 }
 
 .project-description {
@@ -378,6 +391,7 @@ h3 {
   line-height: 1.1; /* Adjusted from 3.75rem for better scaling */
   text-align: center;
   text-wrap: balance;
+  letter-spacing: -.017em !important;
 }
 
 .introduction span {
